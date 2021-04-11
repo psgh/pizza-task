@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="img/pizza.png" rel="apple-touch-icon"/>
+    <link href="img/pizza.png" rel="shortcut icon" type="image/png"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <title>Pizza</title>
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+<div class="navigation">
+    <button onclick="addPizza()">Add pizza</button>
+    <button onclick="viewPizza()">View current pizzas</button>
+</div>
+<div class="container" id="form-container">
+    <div class="header">
+        <h1 id="createPizzaHeader">Create Your Pizza</h1>
+    </div>
+    <form autocomplete="off" class="form" id="form" method="POST" novalidate>
+        <div class="form-control">
+            <label for="name">Pizza name:</label>
+            <input id="name" placeholder="Your pizza name here" type="text"/>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="price">Price:</label>
+            <input id="price" placeholder="Enter the desired price in format like (12.13)" type="text"/>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="heat">Heat (optional) on a scale of 1 to 3:</label>
+            <input id="heat" placeholder="Enter the heat here" type="text"/>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="toppings">Toppings(enter at least 2):</label>
+            <input id="toppings" placeholder="Enter your desired toppings(delineate each topping with , )" type="text"/>
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="photo">Pizza photo (optional):</label>
+            <input id="photo" placeholder="Enter the number corresponding with desired pizza photo" type="text"/>
+            <small>Error message</small>
+        </div>
+        <div class="pizza-images" id="images">
+            <div class="pizza-unit">
+                <img src="img/1.jpg">
+                <p>1</p>
+            </div>
+            <div class="pizza-unit">
+                <img src="img/2.jpg">
+                <p>2</p>
+            </div>
+            <div class="pizza-unit">
+                <img src="img/3.jpg">
+                <p>3</p>
+            </div>
+            <div class="pizza-unit">
+                <img src="img/4.jpg">
+                <p>4</p>
+            </div>
+        </div>
+        <button type="submit">Add Pizza</button>
+    </form>
+</div>
+<div class="table-container" id="table-container">
+    <div class="header">
+        <h1 id="viewPizzaHeader">Here are the pizzas currently in sessionStorage</h1>
+    </div>
+    <div class="sorting-buttons">
+        <button class="sort-button" onclick="sortByNameAscending()">Sort by name ascending(default)</button>
+        <button class="sort-button" onclick="sortByNameDescending()">Sort by name descending</button>
+        <button class="sort-button" onclick="sortByPriceAscending()">Sort by price ascending</button>
+        <button class="sort-button" onclick="sortByPriceDescending()">Sort by price descending</button>
+        <button class="sort-button" onclick="sortByHeatAscending()">Sort by heat ascending</button>
+        <button class="sort-button" onclick="sortByHeatDescending()">Sort by heat descending</button>
+    </div>
+    <div class="table-control" id="table-control">
+        <table id="pizza-table">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col"> Heat</th>
+                <th scope="col">Price</th>
+                <th scope="col">Toppings</th>
+                <th scope="col">Photo</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
